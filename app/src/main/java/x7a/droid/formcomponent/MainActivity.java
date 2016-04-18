@@ -67,19 +67,21 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
                 alert.setCancelable(false)
                         .setTitle("Title Of Alert")
                         .setMessage("Do You Wanna Exit ?")
-                        .setPositiveButton("YES", new DialogInterface.OnClickListener(){
+                        .setPositiveButton("YES", new DialogInterface.OnClickListener() {
                             @Override
-                        public void onClick(DialogInterface dialog, int which){
-                                Toast.makeText(MainActivity.this, "YES", Toast.LENGTH_SHORT).show();
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+//                                Toast.makeText(MainActivity.this, "YES", Toast.LENGTH_SHORT).show();
                             }
                         })
-                        .setNegativeButton("No", new DialogInterface.OnClickListener(){
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
                             @Override
-                        public void onClick(DialogInterface dialog, int which) {
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(MainActivity.this, "NO ACTION", Toast.LENGTH_SHORT).show();
                                 dialog.cancel();
                             }
 
